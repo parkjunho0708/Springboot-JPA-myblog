@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder // 빌더 패턴
-@Entity
+@Entity // test
 public class Board {
 	
 	@Id
