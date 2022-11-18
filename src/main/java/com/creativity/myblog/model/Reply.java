@@ -32,11 +32,11 @@ public class Reply {
 	private String content;
 	
 	// Database의 연관관계도 설정이 가능함
-	@ManyToOne 
+	@ManyToOne  // EAGER 무조건 들고와라
 	@JoinColumn(name="boardId") // 테이블값은 userId로 만들어지고, 연관관계는 ManyToOne으로 만들어짐
 	private Board board;
 	
-	@ManyToOne
+	@ManyToOne // EAGER 무조건 들고와라
 	@JoinColumn(name="userId") // 테이블값은 userId로 만들어지고, 연관관계는 ManyToOne으로 만들어짐
 	private User user;
 	

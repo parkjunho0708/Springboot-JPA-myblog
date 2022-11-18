@@ -43,7 +43,7 @@ public class Board {
 	private int count; // 조회수
 	
 	// Database의 연관관계도 설정이 가능함
-	@ManyToOne // Many = Board, User = One (1명의  user는 여러개의 게시글을 쓸 수 있다는 의미)
+	@ManyToOne(fetch = FetchType.EAGER) // Many = Board, User = One (1명의  user는 여러개의 게시글을 쓸 수 있다는 의미)
 	@JoinColumn(name="userId") // 테이블값은 userId로 만들어지고, 연관관계는 ManyToOne으로 만들어짐
 	private User user;
 	// DB는 오브젝트를 저장할 수 없다.
@@ -54,7 +54,7 @@ public class Board {
 	// User + Board + Reply
 	// mappedBy가 있으면 연관관계의 주인이 아니다 (난 FK가 아니에요)
 	// DB에 컬럼을 만들지 마세요
-	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // OneToMany는 기본 전략이  EAGER가 아님
 	private List<Reply> replay; // 댓글정보는 하나만 가져오면 안되서 List 객체를 사용
 	
 	@CreationTimestamp // 데이터가 insert 혹은 update 될 때, 시간이 자동으로 입력
