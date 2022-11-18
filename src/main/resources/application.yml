@@ -1,6 +1,36 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /myblog
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/myblog?serverTimezone=Asia/Seoul
     username: junho
     password: 1q2w3e4r!Q@W
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create # update, none, create 
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        # physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy (camel case가 아니라 underscore 방식으로 영문컬럼명을 생성)
+      use-new-id-generator-mappings: false # jpa사용하는 기본 넘버링 전략을 따라가지 않는다면, false로 지정
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
