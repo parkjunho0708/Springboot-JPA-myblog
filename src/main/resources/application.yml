@@ -19,6 +19,13 @@ spring:
     username: junho
     password: 1q2w3e4r!Q@W
     
+  thymeleaf:
+    cache: false
+    prefix: /template/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    
   jpa:
     open-in-view: true
     hibernate:
@@ -33,3 +40,5 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+      
+  
