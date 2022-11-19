@@ -18,7 +18,8 @@ spring:
     url: jdbc:mysql://localhost:3306/myblog?serverTimezone=Asia/Seoul
     username: junho
     password: 1q2w3e4r!Q@W
-    
+  
+  # 타임리프 prefix, suffix 경로 셋팅 및 인코딩
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
