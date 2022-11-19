@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+	<title>Getting Started the Spring Boot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p th:text="${name}"></p>
+	<h2>list</h2>
+	<!-- 리스트 출력 -->
+	<ul th:each="value :${values}">
+	    <li th:text="${value}"></li>
+	</ul>
+</body>
+</html>

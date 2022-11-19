@@ -1,7 +1,7 @@
 server:
   port: 8000
   servlet:
-    context-path: /myblog
+    context-path: /myblog # 실행전 path 추가 https://localhost:8000/myblog/..
     encoding:
       charset: UTF-8
       enabled: true
@@ -21,7 +21,7 @@ spring:
     
   thymeleaf:
     cache: false
-    prefix: /template/
+    prefix: classpath:/templates/
     suffix: .html
     mode: HTML
     encoding: UTF-8
