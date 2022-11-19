@@ -1,10 +1,11 @@
 package com.creativity.myblog.test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,4 +31,20 @@ public class ThymeleafControllerTest {
 		modelAndView.setViewName("index");
 		return modelAndView;
 	}
+	
+	@GetMapping("/arraysDemo")
+    public String arraysDemo(Model model) {
+        String[] planets = {
+            "MERCURY",
+            "VENUS",
+            "EARTH",
+            "MARS",
+            "JUPITER",
+            "SATURN",
+            "URANUS",
+            "NEPTUNE"
+        };
+        model.addAttribute("planets", planets);
+        return "planet";
+    }
 }

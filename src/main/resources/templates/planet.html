@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+    <!-- Print the length of the array -->
+    <p>
+        Print the length of the array - <span th:text="${planets.length}"></span>
+    </p>
+
+    <!-- access the value of each element of the array continents by its index -->
+    <ol>
+        <li th:text="${planets[0]}"></li>
+        <li th:text="${planets[1]}"></li>
+        <li th:text="${planets[2]}"></li>
+        <li th:text="${planets[3]}"></li>
+        <li th:text="${planets[4]}"></li>
+        <li th:text="${planets[5]}"></li>
+        <li th:text="${planets[6]}"></li>
+    </ol>
+
+    <!-- iterate over the elements the array sequentially -->
+
+    <ul th:each="planet : ${planets}">
+        <li th:text="${planet}"></li>
+    </ul>
+
+</body>
+
+</html>
