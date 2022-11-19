@@ -19,7 +19,7 @@ public class DummyControllerTest {
 	// https://localhost:8080/blog/dummy/join (요청)
 	// http의 body에 username, password, email 데이터를 가지고 (요청)
 	// x-www-form-urlencoded
-	@PostMapping("/dummny/join")
+	@PostMapping("/dummy/join")
 	public String join(User user) { // key=value (약속된 규칙)
 		System.out.println("id : " + user.getId()); // auto increment로 데이터가 들어가 있게 되어있음
 		System.out.println("username : " + user.getUsername());
@@ -31,5 +31,6 @@ public class DummyControllerTest {
 		user.setRole(RoleType.USER);
 		userRepository.save(user);
 		return "회원가입이 완료되었습니다.";
+		
 	}
 }
